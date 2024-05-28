@@ -227,10 +227,14 @@ if ($("#bg_parent").length) {
         })
         .to(".main-bg-img", {
           rotation: 360,
-          duration: 7,
+          duration: 8,
           opacity: 0,
         });
-      gsap.to("#bg_parent", { opacity: 1, duration: 7 }, "<");
+      gsap.to("#bg_parent", { 
+        opacity: 1, 
+        duration: 8,
+        ease: "power1.inOut",
+       }, "<");
     }
     
     // window.addEventListener("load", init);
