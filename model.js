@@ -214,8 +214,11 @@ if ($("#bg_parent").length) {
       new World();
     };
 
+    setTimeout(() => {
+      init();      
+    }, 5000);
+
     function load() {
-      init();
       gsap
         .timeline()
         .to(".main-bg-img", {
@@ -231,6 +234,6 @@ if ($("#bg_parent").length) {
     }
     
     // window.addEventListener("load", init);
-    window.addEventListener("load", load);
+    window.addEventListener("load", load, init);
 
   }
