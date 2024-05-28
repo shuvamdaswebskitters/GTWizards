@@ -218,11 +218,11 @@ if ($("#bg_parent").length) {
       init();
       gsap
         .timeline()
-        .to("img", {
+        .to(".main-bg-img", {
           opacity: 1,
           duration: 0.3,
         })
-        .to("img", {
+        .to(".main-bg-img", {
           rotation: 360,
           duration: 5,
           opacity: 0,
