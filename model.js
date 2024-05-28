@@ -231,12 +231,17 @@ if ($("#bg_parent").length) {
           duration: 8,
           opacity: 0,
           ease: "none",
+          onUpdate:(salf)=>{
+            if(salf.progress>0.6){
+              gsap.to("canvas", { 
+                opacity: 1, 
+                duration: 3,
+                ease: "none",
+               })
+            }
+          }
       });
-      gsap.to("canvas", { 
-        opacity: 1, 
-        duration: 8,
-        ease: "none",
-       }, "<");
+      
     }
     
     // window.addEventListener("load", init);
