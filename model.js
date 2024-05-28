@@ -214,11 +214,11 @@ if ($("#bg_parent").length) {
       new World();
     };
 
-    setTimeout(() => {
-      init();      
-    }, 4000);
-
+    
     function load() {
+      setTimeout(() => {
+        init();      
+      }, 4000);
       gsap
         .timeline()
         .to(".main-bg-img", {
@@ -229,15 +229,16 @@ if ($("#bg_parent").length) {
           rotation: 360,
           duration: 8,
           opacity: 0,
-        });
+          ease: "none",
+      });
       gsap.to("#bg_parent", { 
         opacity: 1, 
         duration: 8,
-        ease: "power1.inOut",
+        ease: "none",
        }, "<");
     }
     
     // window.addEventListener("load", init);
-    window.addEventListener("load", load, init);
+    window.addEventListener("load", load);
 
   }
