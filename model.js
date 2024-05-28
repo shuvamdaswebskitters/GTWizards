@@ -218,7 +218,12 @@ if ($("#bg_parent").length) {
     
     function load() {
       setTimeout(() => {
-        init();      
+        init();  
+        gsap.to("canvas", { 
+          opacity: 1, 
+          duration: 3,
+          ease: "none",
+         })    
       }, 4000);
       gsap
         .timeline()
@@ -231,15 +236,6 @@ if ($("#bg_parent").length) {
           duration: 8,
           opacity: 0,
           ease: "none",
-          onUpdate:(salf)=>{
-            if(salf.progress>0.6){
-              gsap.to("canvas", { 
-                opacity: 1, 
-                duration: 3,
-                ease: "none",
-               })
-            }
-          }
       });
       
     }
