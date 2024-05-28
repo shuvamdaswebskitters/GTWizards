@@ -216,7 +216,7 @@ if ($("#bg_parent").length) {
 
     setTimeout(() => {
       init();      
-    }, 5000);
+    }, 4000);
 
     function load() {
       gsap
