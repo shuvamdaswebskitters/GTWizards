@@ -232,7 +232,7 @@ if ($("#bg_parent").length) {
           opacity: 0,
           ease: "none",
       });
-      gsap.to("#bg_parent>canvas", { 
+      gsap.to("canvas", { 
         opacity: 1, 
         duration: 8,
         ease: "none",
