@@ -24,6 +24,7 @@ if ($("#bg_parent").length) {
           });
           this.renderer.setPixelRatio(window.devicePixelRatio);
           this.renderer.setSize(content.clientWidth, content.clientHeight);
+          this.renderer.domElement.style.opacity=0;
           content.appendChild(this.renderer.domElement);
           this.molecule = new Molecule();
           this.scene.add(this.molecule);
@@ -231,7 +232,7 @@ if ($("#bg_parent").length) {
           opacity: 0,
           ease: "none",
       });
-      gsap.to("#bg_parent", { 
+      gsap.to("#bg_parent>canvas", { 
         opacity: 1, 
         duration: 8,
         ease: "none",
