@@ -2,6 +2,9 @@ if ($("#bg_parent").length) {
 
     const init = () => {
       const content = document.getElementById("bg_parent");
+      const maxFPS = 30;
+      const frameDelay = 1000 / maxFPS;
+      let lastFrameTime = 0;
       class World {
         constructor() {
           this.build();
@@ -36,11 +39,22 @@ if ($("#bg_parent").length) {
           this.camera.updateProjectionMatrix();
           this.renderer.setSize(w, h);
         }
-        animate() {
+        // animate() {
+        //   requestAnimationFrame(this.animate);
+        //   const time = performance.now() * 0.001;
+        //   this.molecule.animate(time);
+        //   this.renderer.render(this.scene, this.camera);
+        // }
+        animate(currentTime) {
+          const elapsed = currentTime - lastFrameTime;
+          if (elapsed > frameDelay) {
+            this.renderer.render(this.scene, this.camera);
+    
+            lastFrameTime = currentTime - (elapsed % frameDelay);
+          }
           requestAnimationFrame(this.animate);
           const time = performance.now() * 0.001;
-          this.molecule.animate(time);
-          this.renderer.render(this.scene, this.camera);
+          this.molecule.animate( time );
         }
       }
       class Molecule extends THREE.Object3D {
@@ -213,7 +227,10 @@ if ($("#bg_parent").length) {
         }
       }
       new World();
+      
     };
+
+    
 
     
     function load() {
