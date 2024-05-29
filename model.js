@@ -24,6 +24,13 @@ if ($("#bg_parent").length) {
           this.renderer = new THREE.WebGLRenderer({
             alpha: true,
             antialias: true,
+            precision: "mediump",
+            preserveDrawingBuffer: true,
+            powerPreference: "high-performance",
+            failIfMajorPerformanceCaveat: true,
+            stencil: 8,
+            depth: false,
+            logarithmicDepthBuffer: THREE.FloatType,
           });
           this.renderer.setPixelRatio(window.devicePixelRatio);
           this.renderer.setSize(content.clientWidth, content.clientHeight);
