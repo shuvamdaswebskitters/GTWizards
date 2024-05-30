@@ -26,7 +26,7 @@ if ($("#bg_parent").length) {
             antialias: true,
             precision: "mediump",
             preserveDrawingBuffer: true,
-            powerPreference: "high-performance",
+            // powerPreference: "high-performance",
             failIfMajorPerformanceCaveat: true,
             stencil: 8,
             depth: false,
