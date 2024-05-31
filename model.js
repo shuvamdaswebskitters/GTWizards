@@ -29,7 +29,7 @@ if ($("#bg_parent").length) {
             powerPreference: "high-performance",
             failIfMajorPerformanceCaveat: true,
             stencil: 8,
-            // depth: false,
+            depth: false,
             // logarithmicDepthBuffer: THREE.FloatType,
           });
           this.renderer.setPixelRatio(window.devicePixelRatio);
