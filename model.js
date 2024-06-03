@@ -260,7 +260,13 @@ if ($("#bg_parent").length) {
           duration: 8,
           opacity: 0,
           ease: "none",
-      });
+      })
+      .to(".main-bg-img.extra-rotate", {
+        rotation: -360,
+        duration: 8,
+        opacity: 0,
+        ease: "none",
+    });
       
     }
     
