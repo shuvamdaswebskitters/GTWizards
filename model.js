@@ -266,7 +266,7 @@ if ($("#bg_parent").length) {
         duration: 8,
         opacity: 0,
         ease: "none",
-    });
+    }, "<");
       
     }
     
