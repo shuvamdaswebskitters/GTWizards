@@ -255,6 +255,10 @@ if ($("#bg_parent").length) {
           opacity: 1,
           duration: 0.3,
         })
+        .to(".main-bg-img.extra-rotate", {
+          opacity: 0.5,
+          duration: 0.3,
+        })
         .to(".main-bg-img", {
           rotation: 360,
           duration: 8,
